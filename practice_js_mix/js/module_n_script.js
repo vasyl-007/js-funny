@@ -237,13 +237,13 @@
 
 // =================== test 24 =========================
 
-const obj = { 1: "a", 2: "b", 3: "c" };
-const set = new Set([1, 2, 3, 4, 5]);
+// const obj = { 1: "a", 2: "b", 3: "c" };
+// const set = new Set([1, 2, 3, 4, 5]);
 
-console.log(obj.hasOwnProperty("1"));   // true
-console.log(obj.hasOwnProperty(1));     // true
-console.log(set.has("1"));              // false
-console.log(set.has(1));                // true
+// console.log(obj.hasOwnProperty("1"));   // true
+// console.log(obj.hasOwnProperty(1));     // true
+// console.log(set.has("1"));              // false
+// console.log(set.has(1));                // true
 
 // =================== no name test ====================
 
@@ -260,7 +260,94 @@ console.log(set.has(1));                // true
 //   ukrainian.hasOwnProperty("language")
 // );
 
-// =================== test 15 =========================
-// =================== test 15 =========================
-// =================== test 15 =========================
-// =================== test 15 =========================
+// =================== test 25 =========================
+
+// const obj = { a: "one", b: "two", a: "three" };
+// console.log(obj); // "three", "two"
+
+// =================== test 26 =========================
+
+// easy
+
+// =================== test 27 =========================
+
+// for (let i = 1; i < 5; i++) {
+//   if (i === 3) continue;
+//   console.log(i);   // 1, 2, 4
+// }
+
+// =================== test 28 =========================
+
+// String.prototype.giveLydiaPizza = () => {
+//   return "Just give Lydia pizza already!";
+// };
+// const name = "Lydia";
+// console.log(name.giveLydiaPizza());
+// console.log("name", name.giveLydiaPizza);   // Just give Lydia pizza already!
+
+// // const hello = "hello";
+// // console.log("hello.giveLydiaPizza()", hello.giveLydiaPizza());
+// // console.log("hello.hasOwnProperty", hello.hasOwnProperty());
+
+// =================== test 29 =========================
+
+// const a = {};
+// const b = { key: "b" };
+// const c = { key: "c" };
+
+// a[b] = 123;
+// a[c] = 456;
+
+// console.log(a[c]);
+// // Ключи объекта автоматически конвертируются в строки. Мы собираемся добавить объект в качестве ключа к объекту a со значением 123.
+
+// // Тем не менее, когда мы приводим объект к строке, он становится "[object Object]". Таким образом, мы говорим, что a["object Object"] = 123. Потом мы делаем то же самое. c это другой объект, который мы неявно приводим к строке. Поэтому a["object Object"] = 456.
+
+// // Затем, когда мы выводим a[b], мы имеем в виду a["object Object"]. Мы только что установили туда значение 456, поэтому в результате получаем 456.
+
+// =================== test 30 =========================
+
+// const foo = () => console.log("First");
+// const bar = () => setTimeout(() => console.log("Second"));
+// const baz = () => console.log("Third");
+
+// bar();
+// foo();
+// baz();
+
+// // First, Third, Second
+
+// =================== test 31 =========================
+
+// easy
+
+// =================== test 32 =========================
+
+// easy
+
+// =================== test 33 =========================
+
+const person = { name: "Lydia" };
+
+function sayHi(age) {
+  return `${this.name} is ${age}`;
+}
+console.log(sayHi.call(person, 21));
+console.log(sayHi.bind(person, 21));
+
+// Lydia is 21 function (т.к. bind не выполняется сразу)
+
+// =================== test 34 =========================
+
+
+
+// =================== test 28 =========================
+// =================== test 28 =========================
+// =================== test 28 =========================
+// =================== test 28 =========================
+// =================== test 28 =========================
+// =================== test 28 =========================
+// =================== test 28 =========================
+// =================== test 28 =========================
+// =================== test 28 =========================
+// =================== test 28 =========================
