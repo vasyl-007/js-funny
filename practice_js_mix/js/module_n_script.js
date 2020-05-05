@@ -167,18 +167,64 @@
 
 // console.log(sum(1, "2")); // 12
 
-// =================== test 15 =========================
+// =================== test 16 =========================
 
 // let number = 0;
 // console.log(number++); // 0
 // console.log(++number); // 2
 // console.log(number); // 2
 
-// =================== test 15 =========================
-// =================== test 15 =========================
-// =================== test 15 =========================
-// =================== test 15 =========================
-// =================== test 15 =========================
+// =================== test 17 =========================
+
+// function getPersonInfo(one, two, three) {
+//   console.log(one);
+//   console.log(two);
+//   console.log(three);
+// }
+
+// const person = "Lydia";
+// const age = 21;
+
+// console.log(getPersonInfo`${person} is ${age} years old`);
+// // ["", " is ", " years old"] "Lydia" 21
+// // При использовании тегированных шаблонных литералов первым аргументом всегда будет массив строковых значений. Оставшимися аргументами будут значения переданных выражений!
+
+// =================== test 18 =========================
+
+// function checkAge(data) {
+//   if (data === { age: 18 }) {
+//     console.log("You are an adult!");
+//   } else if (data == { age: 18 }) {
+//     console.log("You are still an adult.");
+//   } else {
+//     console.log(`Hmm.. You don't have an age I guess`);
+//   }
+// }
+
+// console.log(checkAge({ age: 18 })); // Hmm.. You don't have an age I guess
+
+// =================== test 19 =========================
+
+// function getAge(...args) {
+//   console.log(typeof args);
+// }
+
+// getAge(21);  // object т.к. псевдомассив - это объект
+
+// =================== test 20 =========================
+
+// function getAge() {
+//   "use strict";
+//   age = 21;
+//   console.log(age);
+// }
+
+// console.log(getAge());  // ReferenceError: age is not defined
+
+// =================== test 21 =========================
+
+
+
 // =================== test 15 =========================
 // =================== test 15 =========================
 // =================== test 15 =========================
