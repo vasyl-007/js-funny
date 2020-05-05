@@ -223,12 +223,43 @@
 
 // =================== test 21 =========================
 
+// const sum = eval("10 * 10 + 5");
+// console.log("sum", sum); // 105 as number
 
+// =================== test 22 =========================
+// easy
+// =================== test 23 =========================
 
-// =================== test 15 =========================
-// =================== test 15 =========================
-// =================== test 15 =========================
-// =================== test 15 =========================
+// var num = 8;
+// var num = 10;
+
+// console.log(num);  // 10
+
+// =================== test 24 =========================
+
+const obj = { 1: "a", 2: "b", 3: "c" };
+const set = new Set([1, 2, 3, 4, 5]);
+
+console.log(obj.hasOwnProperty("1"));   // true
+console.log(obj.hasOwnProperty(1));     // true
+console.log(set.has("1"));              // false
+console.log(set.has(1));                // true
+
+// =================== no name test ====================
+
+// const people = { live: true, eat: true, run: true };
+// const european = Object.create(people);
+// european.language = "english";
+
+// const ukrainian = Object.create(european);
+// ukrainian.language = "ukrainian";
+
+// console.log("ukrainian", ukrainian);
+// console.log(
+//   "ukrainian.hasOwnProperty(\"language\")",
+//   ukrainian.hasOwnProperty("language")
+// );
+
 // =================== test 15 =========================
 // =================== test 15 =========================
 // =================== test 15 =========================
