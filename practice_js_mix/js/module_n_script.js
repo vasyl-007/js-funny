@@ -325,27 +325,73 @@
 
 // easy
 
-// =================== test 33 =========================
+// =================== test 33 !!! =========================
 
-const person = { name: "Lydia" };
+// const person = { name: "Vasyl" };
 
-function sayHi(age) {
-  return `${this.name} is ${age}`;
-}
-console.log(sayHi.call(person, 21));
-console.log(sayHi.bind(person, 21));
+// function sayHi(property) {
+//   return `${this.name} is ${property}`;
+// }
 
-// Lydia is 21 function (т.к. bind не выполняется сразу)
+// console.log(sayHi.call(person, "very smart"));  // Vasyl is very smart
+// console.log(sayHi.bind(person, "very smart"));  // function (т.к. bind не выполняется сразу, а создается копия функции
 
 // =================== test 34 =========================
 
+// function sayHi() {
+//   return (() => 0)();
+// }
 
+// console.log(typeof sayHi());  // number
 
-// =================== test 28 =========================
-// =================== test 28 =========================
-// =================== test 28 =========================
-// =================== test 28 =========================
-// =================== test 28 =========================
+// =================== test no-name ====================
+
+// // !(function () {
+// //   console.log("Hello from IIFE!");
+// // })();
+
+// void (function () {
+//   console.log("Hello from IIFE --- !");
+// })();
+
+// let id = Symbol("id");
+// console.log(id.toString());
+// console.log(id.description);
+
+// =================== test 35 =========================
+
+// console.log(Boolean(0));                // false
+// console.log(Boolean(new Number(0)));    // true
+// console.log(Boolean(""));               // false
+// console.log(Boolean(new Boolean(false))); // true
+// console.log(Boolean(undefined));        // false
+
+// console.log(typeof new Number(0));      // object
+
+// =================== test 36 =========================
+
+// console.log(typeof Number)      // function
+// console.log(typeof typeof 1);   // string
+// console.log(typeof 1);          // number as string
+
+// =================== test 37 =========================
+
+// easy
+
+// =================== test 38 !!! =====================
+
+(() => {
+  let x, y;
+  try {
+    throw new Error();
+  } catch (x) {
+    (x = 1), (y = 2);
+    console.log(x);     // 1
+  }
+  console.log(x);       // undefined
+  console.log(y);       // 2
+})();
+
 // =================== test 28 =========================
 // =================== test 28 =========================
 // =================== test 28 =========================
