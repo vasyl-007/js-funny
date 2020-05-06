@@ -380,20 +380,191 @@
 
 // =================== test 38 !!! =====================
 
-(() => {
-  let x, y;
-  try {
-    throw new Error();
-  } catch (x) {
-    (x = 1), (y = 2);
-    console.log(x);     // 1
-  }
-  console.log(x);       // undefined
-  console.log(y);       // 2
-})();
+// (() => {
+//   let x, y;
+//   try {
+//     throw new Error();
+//   } catch (x) {
+//     (x = 1), (y = 2);
+//     console.log(x);     // 1
+//   }
+//   console.log(x);       // undefined
+//   console.log(y);       // 2
+// })();
 
-// =================== test 28 =========================
-// =================== test 28 =========================
-// =================== test 28 =========================
-// =================== test 28 =========================
-// =================== test 28 =========================
+// =================== test 39 =========================
+// easy
+// =================== no name =========================
+
+// console.log("BigInt", BigInt);
+// console.log(Number.MAX_SAFE_INTEGER);
+
+// =================== test 40 !!! =====================
+
+// console.log(
+//   [
+//     [0, 1],
+//     [2, 3],
+//   ].reduce(
+//     (acc, cur) => {
+//       return acc.concat(cur);
+//     },
+//     [1, 2]
+//   )
+// );
+// // [1, 2, 0, 1, 2, 3]
+
+// =================== test 41 =========================
+
+// !!null;     // false
+// !!"";       // false
+// !!1;        // true
+
+// =================== test 42 =========================
+
+// setInterval(() => console.log("Hi"), 1000);
+// Вечный цикл - осторожно
+
+// =================== test 43 =========================
+
+// console.log([..."Lydia"])   // ["L", "y", "d", "i", "a"]
+
+// =================== test 44 =========================
+
+// function* generator(i) {
+//   yield i;
+//   yield i * 2;
+// }
+
+// const gen = generator(10);
+
+// console.log(gen.next().value);      // 10
+// console.log(gen.next().value);      // 20
+
+// =================== test 45 !!! ======================
+// const firstPromise = new Promise((res, rej) => {
+//   setTimeout(res, 500, "one");
+// });
+
+// const secondPromise = new Promise((res, rej) => {
+//   setTimeout(res, 100, "two");
+// });
+
+// Promise.race([firstPromise, secondPromise]).then((res) => console.log(res));  // "two"
+
+// // Когда мы передаем несколько промисов методу Promise.race, он разрешает/отклоняет первый промис, который разрешается/отклоняется. В метод setTimeout мы передаем таймер: 500 мс для первого промиса (firstPromise) и 100 мс для второго промиса (secondPromise). Это означает, что secondPromise разрешается первым со значением 'два'. res теперь содержит значение 'два', которое выводиться в консоль.
+
+// =================== test 46 !!!  =====================
+
+// let person = { name: "Lydia" };
+// // const members = person;
+// const members = [person];
+// person = null;
+
+// console.log(members);  // [{name: "Lydia"}]
+
+// =================== test 47 !!! =====================
+// const person = {
+//   name: "Lydia",
+//   age: 21,
+// };
+
+// for (const item in person) {
+//   console.log(item); // name, age
+// //   console.log(person[item]); // Lydia, 21
+// }
+
+// =================== test 48 =========================
+// easy
+// =================== test 49 =========================
+// const num = parseInt("7*6", 10);
+// console.log("num", num);        // 7
+
+// // console.log(parseInt("7"*"6", 10));
+// =================== test 50 ! =======================
+
+// console.log([1, 2, 3].map((num) => {
+//   if (typeof num === "number") return;
+//   return num * 2;
+// }))
+//  // [undefined, undefined, undefined]
+
+// =================== test 51 !!!!! very cool! =================
+
+// function getInfo(member, year) {
+//   member.name = "Lydia";
+//   year = "1998";
+// }
+
+// const person = { name: "Sarah" };
+// const birthYear = "1997";
+
+// getInfo(person, birthYear);
+
+// console.log(person, birthYear); // {name: "Lydia"} "1997"
+
+// // Аргументы передаются значением, если их значение не является объектом, то они передаются ссылкой. birthYear передается по значению, поскольку это строка, а не объект. Когда мы передаем аргументы по значению, создается копия этого значения (см. вопрос 46).
+
+// // Переменная birthYear имеет ссылку на значение "1997". Аргумент year также имеет ссылку на значение"1997", но это не то же самое значение, на которое имеется ссылка для birthYear. Когда мы обновляем значение year, устанавливая year равным "1998", мы обновляем только значение year. birthYear по-прежнему равно "1997".
+
+// // Значение person является объектом. Аргумент member имеет (скопированную) ссылку на тот же объект. Когда мы изменяем свойство объекта, на который member ссылается, значение person также будет изменено, поскольку они оба имеют ссылку на один и тот же объект. Свойство name объекта person теперь равно значению "Lydia".
+
+// =================== test no name =====================
+// const obj = { color: "orange" };
+// Object.freeze(obj);
+
+// obj.color = "blue";  // TypeError: Cannot assign to read only property 'color' of object
+
+// // const arr = [obj, 25]  // copy - is Ok
+
+// console.log("obj", obj);
+// console.log('arr', arr)
+
+// =================== test no name ====================
+// const obj = {};
+// const fn = function () {};
+
+// console.dir(fn);
+// console.dir(obj);
+
+// ================== test no name =====================
+// class Hero {
+//     constructor(name, xp) {
+//         this.name = name;
+//         this.xp = xp;
+//     }
+// }
+
+// const mango = new Hero("Mango", 100);
+// console.log("mango", mango);
+
+const Hero = function (name, xp) {
+  this.name = name;
+  this.xp = xp;
+};
+
+Hero.prototype.coolprop = "cool prop"
+console.log(Hero.prototype)
+
+const mango = new Hero("Mango", 100);
+console.log("mango", mango);
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
+// =================== test 52 =========================
