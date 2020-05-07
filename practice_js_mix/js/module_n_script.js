@@ -538,16 +538,16 @@
 // const mango = new Hero("Mango", 100);
 // console.log("mango", mango);
 
-const Hero = function (name, xp) {
-  this.name = name;
-  this.xp = xp;
-};
+// const Hero = function (name, xp) {
+//   this.name = name;
+//   this.xp = xp;
+// };
 
-Hero.prototype.coolprop = "cool prop"
-console.log(Hero.prototype)
+// Hero.prototype.coolprop = "cool prop";
+// console.log(Hero.prototype);
 
-const mango = new Hero("Mango", 100);
-console.log("mango", mango);
+// const mango = new Hero("Mango", 100);
+// console.log("mango", mango);
 // =================== test 52 =========================
 // =================== test 52 =========================
 // =================== test 52 =========================
@@ -568,3 +568,7 @@ console.log("mango", mango);
 // =================== test 52 =========================
 // =================== test 52 =========================
 // =================== test 52 =========================
+
+const numbers = [1, 2];
+
+console.log(numbers.find(el => el === 3));
