@@ -568,18 +568,50 @@
 // sayHi(); // Oh no an error: Hello world!
 
 // =================== test 53 =========================
-function Car() {
-  this.make = "Lamborghini";
-  return { make: "Maserati" };
-}
-const myCar = new Car();
-console.log(myCar.make); // Maserati
+// function Car() {
+//   this.make = "Lamborghini";
+//   return { make: "Maserati" };
+// }
+// const myCar = new Car();
+// console.log(myCar.make); // Maserati
 
-// Когда вы возвращаете свойство, значение свойства равно возвращаемому значению, а не значению, установленному в функции конструктора. Мы возвращаем строку "Maserati", поэтому myCar.make равно "Maserati".
+// // Когда вы возвращаете свойство, значение свойства равно возвращаемому значению, а не значению, установленному в функции конструктора. Мы возвращаем строку "Maserati", поэтому myCar.make равно "Maserati".
 
-// =================== test 52 =========================
-// =================== test 52 =========================
-// =================== test 52 =========================
+// =================== test 54 =========================
+// (() => {
+//   let x = (y = 10);
+// })();
+
+// console.log(typeof x);
+// console.log(typeof y);
+
+// // let a = b = 10;
+// // let b = 20;
+// // console.log('a', a)
+// // console.log('b', b)
+
+// =================== test 55 =========================
+// class Dog {
+//   constructor(name) {
+//     this.name = name;
+//   }
+// }
+
+// Dog.prototype.bark = function () {
+//   console.log(`Woof I am ${this.name}`);
+// };
+
+// const pet = new Dog("Mara");
+
+// pet.bark();     // Woof I am Mara
+
+// delete Dog.prototype.bark;
+
+// pet.bark();     // TypeError
+
+// =================== test 56 =========================
+
+
 // =================== test 52 =========================
 // =================== test 52 =========================
 // =================== test 52 =========================
