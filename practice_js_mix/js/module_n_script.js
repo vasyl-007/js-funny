@@ -610,13 +610,58 @@
 // pet.bark();     // TypeError
 
 // =================== test 56 =========================
+// const set = new Set([1, 1, 2, 3, 4]);
 
+// console.log(set);  // {1, 2, 3, 4}
 
-// =================== test 52 =========================
-// =================== test 52 =========================
-// =================== test 52 =========================
-// =================== test 52 =========================
-// =================== test 52 =========================
+// =================== test 57 =========================
+
+// let counter = 10;
+// export default counter;
+
+// // index.js
+// import myCounter from "./counter";
+
+// myCounter += 1;
+
+// console.log(myCounter);
+
+// // An imported module is read-only: you cannot modify the imported module. Only the module that exports them can change its value.
+
+// =================== test 58 =========================
+// const name = "Lydia";
+// age = 21;
+
+// console.log(delete name);   // fasle
+// console.log(delete age);    // true
+
+// =================== test 59 !!! =====================
+// const numbers = [1, 2, 3, 4, 5];
+// const [y] = numbers;
+
+// console.log(y, z); // 1
+// // деструктуризация!!! Точно так же, как const {value} = this.state
+// // [a, b] = [1, 2];
+
+// =================== test 60 ! =======================
+// const user = { name: "Lydia", age: 21 };
+// const admin = { admin: true, ...user };
+
+// console.log(admin);  // {admin: true, name: "Lydia", age: 21}
+
+// ===================  ! test no name  Object.seal() ===============
+// const object1 = {
+//   property1: 42,
+// };
+
+// console.log(Object.isSealed(object1));     // fasle
+
+// Object.seal(object1);
+
+// console.log(Object.isSealed(object1));      // true
+
+// Object.preventExtensions(empty);
+
 // =================== test 52 =========================
 // =================== test 52 =========================
 // =================== test 52 =========================
