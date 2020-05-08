@@ -680,10 +680,48 @@
 
 // // ...spread делает поверхностную копию объекта
 
-// =================== test 61 =========================
-// =================== test 62 =========================
-// =================== test 63 =========================
-// =================== test 52 =========================
+// =================== test 61 !!! =======================
+// const person = { name: "Lydia" };
+
+// Object.defineProperty(person, "age", { value: 21 });
+
+// console.log(person);                // {name: "Lydia", age: 21}
+// console.log(Object.keys(person));   // ["name"]
+// // When we add a property to an object using the defineProperty method, they are by default not enumerable.
+
+// =================== test 62 !!! =========================
+// const settings = {
+//   username: "lydiahallie",
+//   level: 19,
+//   health: 90,
+// };
+
+// const data = JSON.stringify(settings, ["level", "health"]);  // replacer
+// console.log(data);  // {"level":19,"health":90}
+
+// =================== test 63 ! =========================
+// let num = 10;
+
+// const increaseNumber = () => num++;
+// const increasePassedNumber = (number) => number++;
+
+// const num1 = increaseNumber();
+// const num2 = increasePassedNumber(num1);
+
+// console.log(num1);  // 10
+// console.log(num2);  // 10
+
+// =================== test 64 !!! =========================
+// const value = { number: 10 };
+
+// const multiply = (x = { ...value }) => {
+//   console.log((x.number *= 2));
+// };
+
+// multiply();     // 20
+// multiply();     // 20
+// multiply(value);   // 20
+// multiply(value);    // 40
 // =================== test 52 =========================
 // =================== test 52 =========================
 // =================== test 52 =========================
