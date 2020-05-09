@@ -783,16 +783,91 @@
 
 //     // running sum.js, running index.js, 3
 
-// =================== test 68 =========================
-// console.log(Number(2) === Number(2));               // true
-// console.log(Boolean(false) === Boolean(false));     // true
-// console.log(Symbol("foo") === Symbol("foo"));       // false
+// =================== test 68 !!! =========================
+// console.log(Number(2) === Number(2)); // true
+// console.log(Boolean(false) === Boolean(false)); // true
+// console.log(Symbol("foo") === Symbol("foo")); // false
+
+// console.log(typeof Number); // function
+// console.log(Number === Number); // true
+// console.log(Object === Object); // true
+// console.log(Array === Array); // true
+// console.log(Symbol === Symbol); // true
+
+// const a = [1, 2, 3];
+// const b = [1, 2, 3];
+// console.log(a === b); // false
+
+// const fn1 = new Object();
+// const fn2 = new Object();
+// console.log(fn1 === fn2);       // false
 
 // =================== test 69 =========================
-const name = "Lydia Hallie";
-console.log(name.padStart(13));
-console.log(name.padStart(2));
+// const name = "Lydia Hallie";
+// console.log(name.padStart(13));
+// console.log(name.padStart(2));
 
-// =================== test 52 =========================
-console.log("🥑" + "💻");
+// const str1 = '5';
 
+// console.log(str1.padStart(2, '0'));
+// // expected output: "05"
+
+// const fullNumber = '2034399002125581';
+// const last4Digits = fullNumber.slice(-4);
+// const maskedNumber = last4Digits.padStart(fullNumber.length, '*');
+
+// console.log(maskedNumber);
+// // expected output: "************5581"
+
+// =================== test 70 =========================
+// console.log("🥑" + "💻");
+
+// // 🥑💻
+
+// =================== test 71 !!! функция-генератор =====================
+// function* startGame() {
+//   const answer = yield "Do you love JavaScript?";
+//   if (answer !== "Yes") {
+//     return "Oh wow... Guess we're gone here";
+//   }
+//   return "JavaScript loves you back ❤️";
+// }
+
+// const game = startGame();
+// console.log(game.next().value); // Do you love JavaScript?
+// console.log(game.next("Yes").value); // JavaScript loves you back ❤️
+
+// // game.next().value;
+// // game.next("Yes").value;
+// // Функция генератора "приостанавливает" выполнение, когда видит ключевое слово yield. Во-первых, мы должны позволить функции выдать строку "Do you love JavaScript?", что можно сделать, вызвав game.next().value.
+
+// // Каждая строка выполняется до тех пор, пока не найдет первое ключевое слово yield. В первой строке функции есть ключевое слово yield на первом месте: выполнение останавливается с первым выходом! Это означает, что переменная answer еще не определена!
+
+// // Когда мы вызываем game.next("Yes").value, предыдущий yield заменяется значением параметров, переданных функции next(), в данном случае "Yes". Значение переменной answer теперь равно "Yes". Условие if возвращает false, а JavaScript loves you back ❤️, регистрируется.
+
+// =================== test 72 =========================
+// console.log(String.raw`Hello\nworld`);
+
+// // Hello\nworld
+
+// // String.raw возвращает строку, в которой экранированные символы (\n, \v, \t и т.д.) игнорируются! Обратная косая черта может быть проблемой, так как вы можете получить что-то вроде:
+
+// // const path = `C:\Documents\Projects\table.html`
+
+// // Что приведет к:
+
+// // "C:DocumentsProjects able.html"
+
+// // С String.raw он просто проигнорирует управляющий знак и напечатает:
+
+// // C:\Documents\Projects\table.html
+
+// // В этом случае строка Hello\nworld, которая и выводится.
+
+// =================== test 71 =========================
+// =================== test 71 =========================
+// =================== test 71 =========================
+// =================== test 71 =========================
+// =================== test 71 =========================
+// =================== test 71 =========================
+// =================== test 71 =========================
