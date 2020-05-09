@@ -782,6 +782,15 @@
 // export const sum = (a, b) => a + b;
 
 //     // running sum.js, running index.js, 3
-// =================== test 52 =========================
-// =================== test 52 =========================
+
+// =================== test 68 =========================
+// console.log(Number(2) === Number(2));               // true
+// console.log(Boolean(false) === Boolean(false));     // true
+// console.log(Symbol("foo") === Symbol("foo"));       // false
+
+// =================== test 69 =========================
+const name = "Lydia Hallie";
+console.log(name.padStart(13));
+console.log(name.padStart(2));
+
 // =================== test 52 =========================
