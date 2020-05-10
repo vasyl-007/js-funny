@@ -413,7 +413,6 @@
 //   )
 // );
 // // [1, 2, 0, 1, 2, 3]
-
 // =================== test 41 =========================
 
 // !!null;     // false
@@ -864,8 +863,45 @@
 
 // // В этом случае строка Hello\nworld, которая и выводится.
 
-// =================== test 71 =========================
-// =================== test 71 =========================
+// =================== test no name =========================
+// const a = { "name": "Bob" };
+// console.log("a: ", String(a));  // a: [object Object]
+
+// const b = ["Firstname", "LastName"];
+// console.log("typeof b", typeof b); // object
+
+// const c = String(b);
+// console.log("c: ", c); // c: Firstname,LastName
+// console.log("typeof c:", typeof c); // typeof c: string
+
+// console.log("b: ", String(b)); // a: [object Object]
+
+// const age1 = "20";
+// const age2 = "twenty";
+// const ageNumber1 = console.log(Number(age1)); // 20
+// const ageNumber2 = console.log(Number(age2)); // NaN
+
+// console.log(typeof NaN); // number
+// console.log(typeof null); // object
+
+// const num0 = 0;
+// const num1 = 1;
+
+// console.log("Boolean(num0)", Boolean(num0));    // false
+// console.log("Boolean(num1)", Boolean(num1));    // true
+
+// const abc = true;
+// console.log('String(abc)', String(abc));    // true as string
+
+// const z = 12n;
+const y = NaN;
+// console.log('z: ', z);  // 12n
+// console.log(typeof z);  // bigint
+
+// console.log('String(z):', String(z))
+console.log('y:', String(y))
+
+// =================== test 73 =========================
 // =================== test 71 =========================
 // =================== test 71 =========================
 // =================== test 71 =========================
