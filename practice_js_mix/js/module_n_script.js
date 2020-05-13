@@ -1026,9 +1026,52 @@
 // console.log(name);      // Lidia
 
 // =================== test 77 =========================
+// function sum(a, b) {
+//   return a + b;
+// }
+// // pure function
 
-// =================== test 77 =========================
-// =================== test 77 =========================
+// =================== test pure function ! =====================
+// // A: Простое умножение
+// function doubleA(n) {
+//   return n * 2;
+// }
+// // B: C переменной
+// var two = 2;
+// function doubleB(n) {
+//   return n * two;
+// }
+// // C: С вспомогающей функцией
+// function getTwo() {
+//   return 2;
+// }
+// function doubleC(n) {
+//   return n * getTwo();
+// }
+// // D: Преобразование массива
+// function doubleD(arr) {
+//   return arr.map((n) => n * 2);
+// }
+
+// =================== test 78 !!!!!!! запись в кэш =====================
+// const add = () => {
+//   const cache = {};
+//   return (num) => {
+//     if (num in cache) {
+//       return `From cache! ${cache[num]}`;
+//     } else {
+//       const result = num + 10;
+//       cache[num] = result;
+//       return `Calculated! ${result}`;
+//     }
+//   };
+// };
+
+// const addFunction = add();
+// console.log(addFunction(10));    // Calculated! 20
+// console.log(addFunction(10));    // From cache! 20
+// console.log(addFunction(5 * 2)); // From cache! 20
+
 // =================== test 77 =========================
 // =================== test 77 =========================
 // =================== test 77 =========================
