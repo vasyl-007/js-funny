@@ -894,16 +894,142 @@
 // console.log('String(abc)', String(abc));    // true as string
 
 // const z = 12n;
-const y = NaN;
-// console.log('z: ', z);  // 12n
-// console.log(typeof z);  // bigint
+// const y = NaN;
+// // console.log('z: ', z);  // 12n
+// // console.log(typeof z);  // bigint
 
-// console.log('String(z):', String(z))
-console.log('y:', String(y))
+// // console.log('String(z):', String(z))
+// console.log('y:', String(y))
 
-// =================== test 73 =========================
-// =================== test 71 =========================
-// =================== test 71 =========================
-// =================== test 71 =========================
-// =================== test 71 =========================
-// =================== test 71 =========================
+// =================== test Stack Overflow =========================
+
+// const t = "hello world I am <name> and i live in this <country>";
+// const t1 = t.replace("<name>", "Xanderous");
+// const t2 = t1.replace("<country>", "India");
+// console.log(t2);
+
+// let name = "Xanderous";
+// let country = "India";
+// let extraInfo = "I love traveling!";
+// const dynamicReplacedString = `hello world I am ${name} and i live in this ${country}. And ${extraInfo}`;
+// console.log(dynamicReplacedString);
+
+// let markupCreator;
+// const payments = [mPaymentUI_value, tPaymentUI_value];
+// function createMarkup(arr) {
+//   arr.map((payment) => {
+//     const markup = `
+//         <li>
+//         <p>${payment}$</p>
+//         </li>
+//         `;
+//         // ...
+//     markupCreator.insertAdjacentHTML("beforeend", markup);
+//   });
+// }
+// createMarkup(payments);
+
+// =================== test 73 ! =========================
+// async function getData() {
+//   return await Promise.resolve("I made it!");
+// }
+
+// const data = getData();
+// const data2 = getData().then(res => console.log(res));  // "I made it!"
+// console.log(data);      // promise
+
+// // Асинхронная функция всегда возвращает обещание. await все еще должен ждать разрешения обещания: ожидаемое обещание возвращается, когда мы вызываем getData(), чтобы установить data равным ему.
+
+// // Если бы мы хотели получить доступ к разрешенному значению "I made it", мы могли бы использовать метод .then() для data:
+
+// // data.then(res => console.log(res))
+
+// // Тогда это бы вывело "I made it!"
+
+// =================== test 74 =========================
+// function addToList(item, list) {
+//   return list.push(item);
+// }
+// ​
+// let result = addToList("apple", ["banana"]);
+// console.log(result);    // 2
+// // Метод .push() возвращает длину нового массива! Ранее массив содержал один элемент (строка "banana") и имел длину 1. После добавления в массив строки "apple", массив содержит два элемента и имеет длину 2. Это возвращается из функции addToList.
+
+// // Метод push изменяет исходный массив. Если вы хотите вернуть массив из функции, а не длину массива, вы должны были вернуть list после добавления в нее item.
+
+// =================== test 75 =========================
+// const box = { x: 10, y: 20 };
+
+// Object.freeze(box);
+// console.log(Object.isFrozen(box));
+// const shape = box;
+// console.log(Object.isFrozen(shape));
+// console.log('shape', shape)
+// shape.x = 100;
+
+// console.log(shape);     // TypeError Cannot assign to read only property
+
+// =================== test 76 =========================
+// let name;
+// ({ name: "myName" } = { name: "Lydia" });
+
+// // const [a, b] = [5, 10];
+// // console.log("a, b", a, b);
+// console.log(name);
+
+// const { name: myName } = { name: "Lydia" };
+// console.log(name);
+
+// const [firstName, lastName] = "Petr Chaikovsky".split(" ");
+// console.log("firstName", firstName);
+// console.log("lastName", lastName);
+
+// const fullName = ["Petr", "Chaikovsky"];
+// const name = fullName[0];
+// const surname  = fullName[1];
+// console.log('name, surname', name, surname)
+
+// let [a, b, c] = "456";
+// console.log(a, b, c);
+// let [one, two, three] = new Set([1, 2, 3]);
+// console.log('one, two, three', one, two, three)
+
+// let { height, width, title } = { title: "Menu", height: 200, width: 100 };
+// console.log('height', height)
+
+// let options = {
+//   title: "Menu",
+//   width: 100,
+//   height: 200,
+// };
+
+// let {width: w, height: h, title} = options;
+// // width -> w
+// // height -> h
+// // title -> title
+
+// console.log(title);  // Menu
+// console.log(w);      // 100
+// console.log(h);      // 200
+// // console.log(width)  // RefErr
+
+// const { name: myName } = { name: "Lydia" };
+
+// console.log(myName);    // Lydia
+// console.log(name);      // RefErr
+// ===================================================
+// let name;
+// ({ name } = { name: "Lydia" });
+
+// // const [a, b] = [5, 10];
+// // console.log("a, b", a, b);
+// console.log(name);      // Lidia
+
+// =================== test 77 =========================
+
+// =================== test 77 =========================
+// =================== test 77 =========================
+// =================== test 77 =========================
+// =================== test 77 =========================
+// =================== test 77 =========================
+// =================== test 77 =========================
