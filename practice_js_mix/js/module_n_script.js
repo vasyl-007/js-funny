@@ -1072,7 +1072,41 @@
 // console.log(addFunction(10));    // From cache! 20
 // console.log(addFunction(5 * 2)); // From cache! 20
 
-// =================== test 77 =========================
+// =================== test 79 !!!!!!  for in vs for of =================
+// const myLifeSummedUp = ["☕", "💻", "🍷", "🍫"];
+
+// for (let item in myLifeSummedUp) {
+//   console.log(item);        // 0, 1, 2, 3
+// }
+
+// for (let item of myLifeSummedUp) {
+//   console.log(item);        // "☕", "💻", "🍷", "🍫
+// }
+
+// const abc = ["one", "two", "three", "four"];
+
+// for (let el in abc) {
+//     console.log(el);
+// }
+// for (let el of abc) {
+//     console.log(el);
+// }
+// console.log(Object.entries(abc));
+// console.log(Object.keys(abc));
+// console.log(Object.values(abc));
+
+
+// const abcd = { 0: "one", 1: "two", 2: "three", 3: "four" };
+// for (let el in abcd) {
+//   console.log(el);
+// }
+// // for (let el of abcd) {
+// //   console.log(el);          // FOR OF does not work with objects
+// // }
+// console.log(Object.entries(abcd));
+// console.log(Object.keys(abcd));
+// console.log(Object.values(abcd));
+
 // =================== test 77 =========================
 // =================== test 77 =========================
 // =================== test 77 =========================
