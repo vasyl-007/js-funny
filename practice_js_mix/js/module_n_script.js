@@ -1471,24 +1471,44 @@
 // console.log(one, two, three);   // {} "" []
 
 // =================== test 102 =========================
-const myPromise = () => Promise.resolve("I have resolved!");
+// const myPromise = () => Promise.resolve("I have resolved!");
 
-function firstFunction() {
-  myPromise().then((res) => console.log(res));
-  console.log("second");
+// function firstFunction() {
+//   myPromise().then((res) => console.log(res));
+//   console.log("second");
+// }
+
+// async function secondFunction() {
+//   console.log(await myPromise());
+//   console.log("second");
+// }
+
+// firstFunction();    // second   I have resolved!
+// secondFunction();   // I have resolved!   second
+
+// // С обещанием мы в основном говорим: "Я хочу выполнить эту функцию и откладываю ее, пока она выполняется, поскольку это может занять некоторое время". Только когда определенное значение разрешено (или отклонено), и когда стек вызовов пуст, я хочу использовать это значение.
+
+// // Мы можем получить это значение с помощью ключевого слова .then и await в функции async. Хотя мы можем получить значение обещания с помощью .then и await, они работают немного по-разному.
+
+// // В firstFunction мы (вроде) отложили функцию myPromise во время ее работы, но продолжили выполнение другого кода, в данном случае console.log ('second'). Затем функция разрешается строкой I have resolved, которая затем логируется после того, как она увидела, что стек вызовов пуст.
+
+// // Используя ключевое слово await в secondFunction, мы буквально приостанавливаем выполнение асинхронной функции до тех пор, пока значение не будет разрешено до перехода на следующую строку.
+
+// // Это означает, что мы ожидали разрешения myPromise со значением I have resolved, и только когда это произошло, мы перешли к следующей строке: second была выведена в консоль последней.
+
+// =================== test 103 =========================
+const set = new Set();
+
+set.add(1);
+set.add("Lydia");
+set.add({ name: "Lydia" });
+
+for (let item of set) {
+  console.log(item + 2); // 3 Lydia2 [object Object]2
 }
 
-async function secondFunction() {
-  console.log(await myPromise());
-  console.log("second");
-}
-
-firstFunction();    // second   I have resolved!
-secondFunction();   // I have resolved!   second
-
-// =================== test 101 =========================
-// =================== test 101 =========================
-// =================== test 101 =========================
+// =================== test 104 =========================
+// =================== test 105 =========================
 // =================== test 101 =========================
 // =================== test 101 =========================
 // =================== test 101 =========================
