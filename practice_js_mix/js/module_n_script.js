@@ -1454,7 +1454,14 @@
 // console.log(a * d + c);   // 23
 
 // =================== test no name test =========================
-
+var a = [0, 1, 2, 3];
+var b = [];
+for (let i = 0; i <= a.length; i++) {
+  if (i == a[i]) {
+    b.push(i++);
+  }
+}
+console.log(b);   // [0, 2]
 
 // =================== test no name test =========================
 // =================== test no name test =========================
