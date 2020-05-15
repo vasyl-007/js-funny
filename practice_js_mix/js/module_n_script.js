@@ -1454,20 +1454,38 @@
 // console.log(a * d + c);   // 23
 
 // =================== test no name test =========================
-var a = [0, 1, 2, 3];
-var b = [];
-for (let i = 0; i <= a.length; i++) {
-  if (i == a[i]) {
-    b.push(i++);
-  }
+// var a = [0, 1, 2, 3];
+// var b = [];
+// for (let i = 0; i <= a.length; i++) {
+//   if (i == a[i]) {
+//     b.push(i++);
+//   }
+// }
+// console.log(b);   // [0, 2]
+
+// =================== test 101 =========================
+// const one = false || {} || null;
+// const two = null || false || "";
+// const three = [] || 0 || true;
+
+// console.log(one, two, three);   // {} "" []
+
+// =================== test 102 =========================
+const myPromise = () => Promise.resolve("I have resolved!");
+
+function firstFunction() {
+  myPromise().then((res) => console.log(res));
+  console.log("second");
 }
-console.log(b);   // [0, 2]
 
-// =================== test no name test =========================
-// =================== test no name test =========================
+async function secondFunction() {
+  console.log(await myPromise());
+  console.log("second");
+}
 
-// =================== test 101 =========================
-// =================== test 101 =========================
+firstFunction();    // second   I have resolved!
+secondFunction();   // I have resolved!   second
+
 // =================== test 101 =========================
 // =================== test 101 =========================
 // =================== test 101 =========================
