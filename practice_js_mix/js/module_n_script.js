@@ -1212,13 +1212,92 @@
 // const member = new Person("John");
 // console.log(typeof member); // object
 
-// =================== test 90 =========================
-// =================== test 90 =========================
-// =================== test 90 =========================
-// =================== test 90 =========================
-// =================== test 90 =========================
-// =================== test 90 =========================
-// =================== test 90 =========================
+// =================== test 91 ! =========================
+// let newList = [1, 2, 3].push(4);
+// // console.log(newList)
+// console.log(newList.push(5));   // TypeError
+
+// // Метод .push возвращает новую длину массива, а не сам массив! Устанавливая newList равным [1, 2, 3].push(4), мы устанавливаем newList равным новой длине массива: 4.
+
+// // Затем мы пытаемся использовать метод .push для newList. Поскольку newList является числовым значением 4, мы не можем использовать метод .push: выдается ошибка TypeError.
+
+// =================== test 92 =========================
+// function giveLydiaPizza() {
+//   return "Here is pizza!";
+// }
+
+// const giveLydiaChocolate = () =>
+//   "Here's chocolate... now go hit the gym already.";
+
+// console.log(giveLydiaPizza.prototype);      // {constructor: ƒ}
+// console.log(giveLydiaChocolate.prototype);  // undefined
+// // У стрелочных функций нет прототипа
+
+// // Обычные функции, такие как функция giveLydiaPizza, имеют свойство prototype, которое является объектом (прототипом объекта) со свойством constructor. Однако функции со стрелками, такие как функция giveLydiaChocolate, не имеют этого свойства prototype. undefined возвращается при попытке доступа к свойству prototype с использованием giveLydiaChocolate.prototype.
+
+// // function fn() {
+// //   return null;
+// // }
+// // console.log(fn.prototype)
+// // console.log(fn)
+
+// =================== test 93 !!!! =========================
+// const person = {
+//   name: "Lydia",
+//   age: 21,
+// };
+
+// for (const [x, y] of Object.entries(person)) {
+//   console.log(x, y); // name Lydia age 21
+// }
+// console.log('Object.entries(person)', Object.keys(person)) // массив в массиве
+
+// =================== test 94 =========================
+// function getItems(fruitList, ...args, favoriteFruit) {
+//   return [...fruitList, ...args, favoriteFruit]
+// }
+
+// getItems(["banana", "apple"], "pear", "orange"); // SytaxErros - rest is the last parameter
+
+// =================== test 95 ! =========================
+// function nums(a, b) {
+//   if (a > b) console.log("a is bigger");
+//   else console.log("b is bigger");
+//   return;
+//   a + b;
+// }
+
+// console.log(nums(4, 2));    // a is bigger undefined
+// console.log(nums(1, 2));    // b is bigger undefined
+
+
+// =================== test 96 !!! =========================
+// class Person {
+//   constructor() {
+//     this.name = "Lydia";
+//   }
+// }
+
+// Person = class AnotherPerson {      // присвоили классу Person другой класс
+//   constructor() {
+//     this.name = "Sarah";
+//   }
+// };
+
+// const member = new Person();
+// console.log(member.name);       // Sarah
+
+// // Мы можем установить классы равными другим классам/конструкторам функций. В этом случае мы устанавливаем Person равным AnotherPerson. Свойство name этого конструктора - Sarah, поэтому свойство name для нового экземпляра класса Person member - это Sarah.
+
+// =================== test 97 !!! Symbol =======================
+const info = {
+  [Symbol("a")]: "b",
+};
+
+console.log(info);              // {Symbol(a): "b"}
+console.log(Object.keys(info)); // []
+console.log(typeof Symbol("a")) // symbol
+
 // =================== test 90 =========================
 // =================== test 90 =========================
 // =================== test 90 =========================
