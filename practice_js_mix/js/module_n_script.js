@@ -1382,6 +1382,83 @@
 // var a = [3, 5, 2, 1, 4, 8];
 // console.log(f(a)); // 2,4,8
 
+// =================== test no name test =========================
+// var x = 1,
+//   y = 1,
+//   z = 0;
+// do {
+//   z = x + y;
+// } while (++x <= 1 && y++ >= 1);
+// z += x + y;
+// console.log("z", z); // z
+
+// =================== test no name test =========================
+// let a = 2;
+// set();
+// function set() {
+//   a = 5;
+// }
+// console.log(a);   // 5
+
+// =================== test no name test =========================
+// let foo, exp;
+// var abc = exp = foo = function(a){
+//   return a * a;
+// }
+// console.log(abc(5));  // 25
+
+// function foo2(a){
+//   return a * a;
+// }
+// console.log(foo2(5)); // 25
+
+// =================== test no name test =========================
+// let y = false;
+// let c = "dfdfvdfvdfd"
+// let x = y || c && 1;
+// console.log(x)    // 1
+
+// let a = true;
+// let b = a && 1;
+// console.log(b);   // 1
+
+// =================== test no name test =========================
+// var map = new Map();
+// console.log(typeof map) // object
+// map.set(1, "hello").set(2, "world");
+// console.log(map.get(1));   // hello
+// console.log(map.has(3));  // false
+// console.log("map", map); // {1 => "hello", 2 => "world"}
+
+// const person = new Map();
+// // console.log(typeof person)
+// person.set("surname", "Chaikovsky").set("name", "Petr");
+// console.log(person.get("surname"))
+
+// =================== test no name test =========================
+// const x = "01234".split("").slice(2, 4).reverse().pop();
+// console.log(x); // 2
+
+// const y = [1, 2, 3];
+// console.log("y.pop()", y.pop()); // 3
+// console.log("y", y); // 1, 2
+
+// =================== test no name test =========================
+// let c = 3,
+//   d = 4,
+//   a,
+//   b;
+// a = d;
+// b = c;
+// ++d;
+// console.log(a * d + c);   // 23
+
+// =================== test no name test =========================
+
+
+// =================== test no name test =========================
+// =================== test no name test =========================
+
 // =================== test 101 =========================
 // =================== test 101 =========================
 // =================== test 101 =========================
