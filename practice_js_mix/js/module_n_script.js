@@ -1795,13 +1795,28 @@
 // console.log(obj.key)        // undefined
 // console.log(obj[key])       // some key
 
-// =================== test no name =========================
+// =================== test Map.set Map.get =========================
 // const name = new Map();
 // console.log(name);
 // console.log(typeof name);   // object
 
 // const name2 = new Set();
 // console.log(typeof name2)   // object
+
+// let myMap = new Map();
+// const keyObj = {},
+//   keyFunc = () => {},
+//   keyString = "string";
+
+// myMap.set(keyObj, { name: "Vasyl" });
+// myMap.set(keyFunc, () => console.log("Hello!"));
+// myMap.set(keyString, "new string");
+
+// console.log(myMap.size);
+// console.log(myMap);
+// console.log(myMap.get(keyObj));
+// console.log(myMap.get(keyString));
+// console.log(myMap.get(keyFunc));
 
 // =================== test no name =========================
 // =================== test no name =========================
