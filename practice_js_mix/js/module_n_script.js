@@ -1709,8 +1709,26 @@
 // With the += operand, we're incrementing the value of num by 1. num had the initial value 1, so 1 + 1 is 2. The item on the second index in the list array is 🥰, console.log(list[2]) prints 🥰.
 
 
-// =================== test 117 =========================
-// =================== test 117 =========================
+// =================== test 119 =========================
+// const person = {
+//   firstName: "Lydia",
+//   lastName: "Hallie",
+//   pet: {
+//     name: "Mara",
+//     breed: "Dutch Tulip Hound",
+//   },
+//   getFullName() {
+//     return `${this.firstName} ${this.lastName}`;
+//   },
+// };
+
+// console.log(person.pet?.name);              // Mara
+// console.log(person.pet?.family?.name);      // undefined
+// console.log(person.getFullName?.());        // Lydia Hallie
+// console.log(member.getLastName?.());        // RefErr
+
+// =================== test 120 =========================
+
 // =================== test 117 =========================
 // =================== test 117 =========================
 // =================== test 117 =========================
