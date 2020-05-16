@@ -1708,7 +1708,6 @@
 
 // With the += operand, we're incrementing the value of num by 1. num had the initial value 1, so 1 + 1 is 2. The item on the second index in the list array is 🥰, console.log(list[2]) prints 🥰.
 
-
 // =================== test 119 =========================
 // const person = {
 //   firstName: "Lydia",
@@ -1728,8 +1727,19 @@
 // console.log(member.getLastName?.());        // RefErr
 
 // =================== test 120 =========================
+// const groceries = ["banana", "apple", "peanuts"];
 
-// =================== test 117 =========================
+// if (groceries.indexOf("banana")) {
+//   console.log("We have to buy bananas!");
+// } else {
+//   console.log(`We don't have to buy bananas!`);     // correct 
+// }
+
+// We passed the condition groceries.indexOf("banana") to the if-statement. groceries.indexOf("banana") returns 0, which is a falsy value. Since the condition in the if-statement is falsy, the code in the else block runs, and We don't have to buy bananas! gets logged.
+
+// =================== test 121 =========================
+
+
 // =================== test 117 =========================
 // =================== test 117 =========================
 // =================== test 117 =========================
