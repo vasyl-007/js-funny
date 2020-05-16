@@ -1818,7 +1818,22 @@
 // console.log(myMap.get(keyString));
 // console.log(myMap.get(keyFunc));
 
-// =================== test no name =========================
+// =================== test hoisting of variables =========================
+// let message;
+// function makeMessage() {
+//     message = "Hello!"
+//     console.log(message);
+// }
+// makeMessage();          // Hello
+// console.log(message)    // Hello
+
+// console.log([] == 1);   // fasle
+// console.log({} == 1);   // fasle
+// console.log("" == 0);   // true
+
+// console.log({} == {});   // fasle
+// console.log([] == []);   // fasle
+
 // =================== test no name =========================
 // =================== test no name =========================
 // =================== test 123 =========================
