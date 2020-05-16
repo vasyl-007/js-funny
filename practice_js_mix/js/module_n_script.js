@@ -1593,31 +1593,71 @@
 // JSON.parse(jsonArray) // { name: 'Lydia' }
 
 // =================== test no name proxy !!! =========================
-let dictionary = {
-  'Hello': 'Hola',
-  'Bye': 'Adiós'
-};
+// let dictionary = {
+//   'Hello': 'Hola',
+//   'Bye': 'Adiós'
+// };
 
-dictionary = new Proxy(dictionary, {
-  get(target, phrase) { // перехватываем чтение свойства в dictionary
-    if (phrase in target) { // если перевод для фразы есть в словаре
-      return target[phrase]; // возвращаем его
-    } else {
-      // иначе возвращаем непереведённую фразу
-      return phrase;
-    }
-  }
-});
+// dictionary = new Proxy(dictionary, {
+//   get(target, phrase) { // перехватываем чтение свойства в dictionary
+//     if (phrase in target) { // если перевод для фразы есть в словаре
+//       return target[phrase]; // возвращаем его
+//     } else {
+//       // иначе возвращаем непереведённую фразу
+//       return phrase;
+//     }
+//   }
+// });
 
-// Запросим перевод произвольного выражения в словаре!
-// В худшем случае оно не будет переведено
-console.log( dictionary['Hello'] ); // Hola
-console.log( dictionary['Welcome to Proxy']); // Welcome to Proxy (нет перевода)
+// // Запросим перевод произвольного выражения в словаре!
+// // В худшем случае оно не будет переведено
+// console.log( dictionary['Hello'] ); // Hola
+// console.log( dictionary['Welcome to Proxy']); // Welcome to Proxy (нет перевода)
 
 // =================== test 111 =========================
-// =================== test 110 =========================
-// =================== test 110 =========================
-// =================== test 110 =========================
-// =================== test 110 =========================
+// let name = "Lydia";
+
+// function getName() {
+//   console.log(name);
+//   let name = "Sarah";
+// }
+
+// getName();      // RefErr
+
+// =================== test 112 !!! генератор ======================
+// function* generatorOne() {
+//   yield ["a", "b", "c", "d"];
+// }
+
+// function* generatorTwo() {
+//   yield* ["a", "b", "c", "d"];
+// }
+
+// const one = generatorOne();
+// const two = generatorTwo();
+
+// console.log(one.next().value);      // ["a", "b", "c", "d"]
+// console.log(two.next().value);      // a
+
+// =================== test 113 =========================
+// console.log(`${((x) => x)("I love")} to program`);
+
+// // Expressions within template literals are evaluated first. This means that the string will contain the returned value of the expression, the immediately invoked function (x => x)('I love') in this case. We pass the value 'I love' as an argument to the x => x arrow function. x is equal to 'I love', which gets returned. This results in I love to program.
+
+// =================== test 114 ! =========================
+// let config = {
+//   alert: setInterval(() => {
+//     console.log("Alert!");
+//   }, 1000),
+// };
+
+// config = null;
+
+// // обратный вызов setInterval будет вызываться каждую секунду
+// Обычно, когда мы устанавливаем объекты равными null, эти объекты получают метку собрано в мусор, так как больше нет ссылок на этот объект. Однако, поскольку функция обратного вызова в setInterval является стрелочной функцией стрелки (таким образом, привязанной к объекту config), функция обратного вызова все еще содержит ссылку на объект config. Пока есть ссылка, объект не будет собран в мусор. Поскольку сборщик мусора не отрабатывает, функция обратного вызова setInterval будет по-прежнему вызываться каждые 1000 мс (1с).
+
+// =================== test 115 =========================
+
+
 // =================== test 110 =========================
 // =================== test 110 =========================
