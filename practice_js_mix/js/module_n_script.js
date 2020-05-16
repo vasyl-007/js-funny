@@ -1732,7 +1732,7 @@
 // if (groceries.indexOf("banana")) {
 //   console.log("We have to buy bananas!");
 // } else {
-//   console.log(`We don't have to buy bananas!`);     // correct 
+//   console.log(`We don't have to buy bananas!`);     // correct
 // }
 
 // We passed the condition groceries.indexOf("banana") to the if-statement. groceries.indexOf("banana") returns 0, which is a falsy value. Since the condition in the if-statement is falsy, the code in the else block runs, and We don't have to buy bananas! gets logged.
@@ -1762,20 +1762,65 @@
 
 // (If we wanted to check whether the type was (un)equal to a certain type, we should've written !== instead of !typeof)
 
-// =================== test 117 =========================
-// =================== test 117 =========================
-// =================== test 117 =========================
-// =================== test 117 =========================
-// =================== test 117 =========================
-// =================== test 117 =========================
-// =================== test 117 =========================
-// =================== test 117 =========================
-// =================== test 117 =========================
-// =================== test 117 =========================
-// =================== test 117 =========================
-// =================== test 117 =========================
-// =================== test 117 =========================
-// =================== test 117 =========================
-// =================== test 117 =========================
-// =================== test 117 =========================
-// =================== test 117 =========================
+// =================== test no name =========================
+// const user = { name: "Vasyl", surname: "Manyo" };
+// const user2 = Object.assign(user); // tumatate user
+
+// user.age = 26;
+// user.name = "Petr";
+
+// console.log(user);  // {name: "Petr", surname: "Manyo", age: 26}
+// console.log(user2); // {name: "Petr", surname: "Manyo", age: 26}
+
+// const user3 = JSON.parse(JSON.stringify(user)); // deep clone (do not mutate)
+// user.name = "noname"
+// user.surname = "surname"
+// console.log(user)       // {name: "noname", surname: "surname"}
+// console.log(user3)      // {name: "Vasyl", surname: "Manyo"}
+
+// const user4 = {...user};        // light copy (do not mutate)
+// user.name = "noname"
+// user.surname = "surname"
+// console.log(user)       // {name: "noname", surname: "surname"}
+// console.log(user4)      // {name: "Vasyl", surname: "Manyo"}
+
+// const user5 = object.cloneDeep(user);
+// console.log(user5)
+
+// --------------- Sybmols --------------------------------
+
+// // const key = Symbol("key");
+// const key = Symbol("key");
+// const obj = { [key]: "some key" };
+// console.log(obj.key)        // undefined
+// console.log(obj[key])       // some key
+
+// =================== test no name =========================
+// const name = new Map();
+// console.log(name);
+// console.log(typeof name);   // object
+
+// const name2 = new Set();
+// console.log(typeof name2)   // object
+
+// =================== test no name =========================
+// =================== test no name =========================
+// =================== test no name =========================
+// =================== test 123 =========================
+// =================== test 124 =========================
+// =================== test 125 =========================
+// =================== test 126 =========================
+// =================== test 127 =========================
+// =================== test 128 =========================
+// =================== test 129 =========================
+// =================== test 130 =========================
+// =================== test 131 =========================
+// =================== test 132 =========================
+// =================== test 133 =========================
+// =================== test 134 =========================
+// =================== test 135 =========================
+// =================== test 136 =========================
+// =================== test 137 =========================
+// =================== test 138 =========================
+// =================== test 139 =========================
+// =================== test 140 =========================
