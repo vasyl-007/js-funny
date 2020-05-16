@@ -1592,8 +1592,29 @@
 // const jsonArray = JSON.stringify({ name: "Lydia" }) // '{"name":"Lydia"}'
 // JSON.parse(jsonArray) // { name: 'Lydia' }
 
-// =================== test 110 =========================
-// =================== test 110 =========================
+// =================== test no name proxy !!! =========================
+let dictionary = {
+  'Hello': 'Hola',
+  'Bye': 'Adiós'
+};
+
+dictionary = new Proxy(dictionary, {
+  get(target, phrase) { // перехватываем чтение свойства в dictionary
+    if (phrase in target) { // если перевод для фразы есть в словаре
+      return target[phrase]; // возвращаем его
+    } else {
+      // иначе возвращаем непереведённую фразу
+      return phrase;
+    }
+  }
+});
+
+// Запросим перевод произвольного выражения в словаре!
+// В худшем случае оно не будет переведено
+console.log( dictionary['Hello'] ); // Hola
+console.log( dictionary['Welcome to Proxy']); // Welcome to Proxy (нет перевода)
+
+// =================== test 111 =========================
 // =================== test 110 =========================
 // =================== test 110 =========================
 // =================== test 110 =========================
