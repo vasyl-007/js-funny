@@ -1737,10 +1737,31 @@
 
 // We passed the condition groceries.indexOf("banana") to the if-statement. groceries.indexOf("banana") returns 0, which is a falsy value. Since the condition in the if-statement is falsy, the code in the else block runs, and We don't have to buy bananas! gets logged.
 
-// =================== test 121 =========================
+// =================== test 121 ! =========================
+// const config = {
+//   languages: [],
+//   set language(lang) {
+//     return this.languages.push(lang);
+//   },
+// };
 
+// console.log(config.language);       // undefined
 
-// =================== test 117 =========================
+// The language method is a setter. Setters don't hold an actual value, their purpose is to modify properties. When calling a setter method, undefined gets returned.
+
+// =================== test 122 =========================
+// const name = "Lydia Hallie";
+
+// console.log(!typeof name === "object");     // false
+// console.log(!typeof name === "string");     // fasle
+
+// console.log(!typeof name !== "object");     // true
+// console.log(!typeof name !== "string");     // true
+
+// typeof name returns "string". The string "string" is a truthy value, so !typeof name returns the boolean value false. false === "object" and false === "string" both returnfalse.
+
+// (If we wanted to check whether the type was (un)equal to a certain type, we should've written !== instead of !typeof)
+
 // =================== test 117 =========================
 // =================== test 117 =========================
 // =================== test 117 =========================
