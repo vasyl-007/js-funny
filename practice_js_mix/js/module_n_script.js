@@ -1847,21 +1847,49 @@
 // console.log(add(4)(5)(6))   // 15
 
 // =================== test 124 =========================
-async function* range(start, end) {
-  for (let i = start; i <= end; i++) {
-    yield Promise.resolve(i);
-  }
-}
+// async function* range(start, end) {
+//   for (let i = start; i <= end; i++) {
+//     yield Promise.resolve(i);
+//   }
+// }
 
-(async () => {
-  const gen = range(1, 3);
-  for await (const item of gen) {
-    console.log(item);
-  }
-})();
+// (async () => {
+//   const gen = range(1, 3);
+//   for await (const item of gen) {
+//     console.log(item);                  // 1, 2, 3
+//   }
+// })();
+
+// The generator function range returns an async object with promises for each item in the range we pass: Promise{1}, Promise{2}, Promise{3}. We set the variable gen equal to the async object, after which we loop over it using a for await ... of loop. We set the variable item equal to the returned Promise values: first Promise{1}, then Promise{2}, then Promise{3}. Since we're awaiting the value of item, the resolved promsie, the resolved values of the promises get returned: 1, 2, then 3.
 
 // =================== test 125 =========================
-// =================== test 126 =========================
+// const myFunc = ({ x, y, z }) => {
+//   console.log(x, y, z);
+// };
+
+// myFunc(1, 2, 3);        // undefined, undefined, undefined
+
+// myFunc expects an object with properties x, y and z as its argument. Since we're only passing three separate numeric values (1, 2, 3) instead of one object with properties x, y and z ({x: 1, y: 2, z: 3}), x, y and z have their default value of undefined.
+
+// =================== test 126 !? strange=========================
+function getFine(speed, amount) {
+  const formattedSpeed = new Intl.NumberFormat({
+    'en-US',
+    { style: 'unit', unit: 'mile-per-hour' }
+  }).format(speed)
+
+  const formattedAmount = new Intl.NumberFormat({
+    'en-US',
+    { style: 'currency', currency: 'USD' }
+  }).format(amount)
+
+  return `The driver drove ${formattedSpeed} and has to pay ${formattedAmount}`
+}
+
+console.log(getFine(130, 300));      //  The driver drove 130 mph and has to pay $300.00
+
+
+
 // =================== test 127 =========================
 // =================== test 128 =========================
 // =================== test 129 =========================
