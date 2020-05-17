@@ -1871,26 +1871,35 @@
 
 // myFunc expects an object with properties x, y and z as its argument. Since we're only passing three separate numeric values (1, 2, 3) instead of one object with properties x, y and z ({x: 1, y: 2, z: 3}), x, y and z have their default value of undefined.
 
-// =================== test 126 !? strange=========================
-function getFine(speed, amount) {
-  const formattedSpeed = new Intl.NumberFormat({
-    'en-US',
-    { style: 'unit', unit: 'mile-per-hour' }
-  }).format(speed)
+// =================== test 126 !!! locale Intl.NumberFormat =======================
+// function getFine(speed, amount) {
+//   const formattedSpeed = new Intl.NumberFormat("en-US", {
+//     style: "unit",
+//     unit: "mile-per-hour",
+//   }).format(speed);
 
-  const formattedAmount = new Intl.NumberFormat({
-    'en-US',
-    { style: 'currency', currency: 'USD' }
-  }).format(amount)
+//   const formattedAmount = new Intl.NumberFormat("en-US", {
+//     style: "currency",
+//     currency: "USD",
+//   }).format(amount);
 
-  return `The driver drove ${formattedSpeed} and has to pay ${formattedAmount}`
-}
+//   return `The driver drove ${formattedSpeed} and has to pay ${formattedAmount}`;
+// }
 
-console.log(getFine(130, 300));      //  The driver drove 130 mph and has to pay $300.00
+// console.log(getFine(130, 300)); //  The driver drove 130 mph and has to pay $300.00
 
-
+// With the Intl.NumberFormat method, we can format numeric values to any locale. We format the numeric value 130 to the en-US locale as a unit in mile-per-hour, which results in 130 mph. The numeric value 300 to the en-US locale as a currentcy in USD results in $300.00.
 
 // =================== test 127 =========================
+// const spookyItems = ["👻", "🎃", "🕸"];
+// ({ item: spookyItems[3] } = { item: "💀" });
+
+// console.log(spookyItems);       // ["👻", "🎃", "🕸", "💀"]
+
+// By destructuring objects, we can unpack values from the right-hand object, and assign the unpacked value to the value of the same property name on the left-hand object. In this case, we're assigning the value "💀" to spookyItems[3]. This means that we're modifying the spookyItems array, we're adding the "💀" to it. When logging spookyItems, ["👻", "🎃", "🕸", "💀"] gets logged.
+
+
+
 // =================== test 128 =========================
 // =================== test 129 =========================
 // =================== test 130 =========================
