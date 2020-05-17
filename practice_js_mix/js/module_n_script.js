@@ -1833,11 +1833,33 @@
 
 // console.log({} == {});   // fasle
 // console.log([] == []);   // fasle
+// let fn = () => {};
+// console.log("hello");
+// console.log(typeof fn);
 
-// =================== test no name =========================
-// =================== test no name =========================
-// =================== test 123 =========================
+// =================== test 123 !!! curry function =================
+// const add = (x) => (y) => (z) => {
+//   console.log(x, y, z);
+//   return x + y + z;
+// };
+
+// add(4)(5)(6);               // 4 , 5, 6
+// console.log(add(4)(5)(6))   // 15
+
 // =================== test 124 =========================
+async function* range(start, end) {
+  for (let i = start; i <= end; i++) {
+    yield Promise.resolve(i);
+  }
+}
+
+(async () => {
+  const gen = range(1, 3);
+  for await (const item of gen) {
+    console.log(item);
+  }
+})();
+
 // =================== test 125 =========================
 // =================== test 126 =========================
 // =================== test 127 =========================
