@@ -1903,7 +1903,7 @@
 // const age = 21;
 
 // console.log(Number.isNaN(name));    // false
-// console.log(Number.isNaN(age));     // false    
+// console.log(Number.isNaN(age));     // false
 
 // console.log(isNaN(name));           // true
 // console.log(isNaN(age));            // false
@@ -1924,7 +1924,23 @@
 
 // Variables declared with the const keyword are not referencable before their initialization: this is called the temporal dead zone. In the getInfo function, the variable randomValue is scoped in the functional scope of getInfo. On the line where we want to log the value of typeof randomValue, the variable randomValue isn't initialized yet: a ReferenceError gets thrown! The engine didn't go down the scope chain since we declared the variable randomValue in the getInfo function.
 
+// =================== test no name =========================
+// let x,
+//   y = 0;
+// function change() {
+//   for (x = 5; x <= 10; x++) {
+//     ++y;
+//   }
+//   return y;
+// }
+// // change();        
+// console.log(x); // undefined
+// console.log(y); // 0
+
+ // Дело в том, что функция не была вызвана
+
 // =================== test 130 =========================
+
 // =================== test 131 =========================
 // =================== test 132 =========================
 // =================== test 133 =========================
