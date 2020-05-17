@@ -1933,13 +1933,26 @@
 //   }
 //   return y;
 // }
-// // change();        
+// // change();
 // console.log(x); // undefined
 // console.log(y); // 0
 
- // Дело в том, что функция не была вызвана
+// Дело в том, что функция не была вызвана
 
-// =================== test 130 =========================
+// =================== test 130 !!! promise =========================
+// const myPromise = Promise.resolve("Woah some cool data");
+
+// (async () => {
+//   try {
+//     console.log(await myPromise);
+//   } catch {
+//     throw new Error(`Oops didn't work`);
+//   } finally {
+//     console.log("Oh finally!");         // Woah some cool data  Oh finally!
+//   }
+// })();
+
+// In the try block, we're logging the awaited value of the myPromise variable: "Woah some cool data". Since no errors were thrown in the try block, the code in the catch block doesn't run. The code in the finally block always runs, "Oh finally!" gets logged.
 
 // =================== test 131 =========================
 // =================== test 132 =========================
