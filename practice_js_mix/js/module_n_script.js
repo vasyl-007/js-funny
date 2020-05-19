@@ -1984,8 +1984,70 @@
 // Then, we create a new variable counterTwo, and set it equal to counterOne. Since objects interact by reference, we're just creating a new reference to the same spot in memory that counterOne points to. Since it has the same spot in memory, any changes made to the object that counterTwo has a reference to, also apply to counterOne. Currently, counterTwo.count is 2.
 
 // We invoke the counterTwo.increment(), which sets the count to 3. Then, we log the count on counterOne, which logs 3.
+
 // =================== test 133 =========================
+// const myPromise = Promise.resolve(Promise.resolve("Promise!"));
+
+// function funcOne() {
+//   myPromise.then((res) => res).then((res) => console.log(res));
+//   setTimeout(() => console.log("Timeout!", 0));
+//   console.log("Last line!");
+// }
+
+// async function funcTwo() {
+//   const res = await myPromise;
+//   console.log(await res);
+//   setTimeout(() => console.log("Timeout!", 0));
+//   console.log("Last line!");
+}
+
+// funcOne();    // Last line!   Promise!  Timeout! 0  
+// funcTwo();    // Promise!  Last line!   Timeout! 0   
+
+// First, we invoke funcOne. On the first line of funcOne, we call the myPromise promise, which is an asynchronous operation. While the engine is busy completing the promise, it keeps on running the function funcOne. The next line is the asynchronous setTimeout function, from which the callback is sent to the Web API. (see my article on the event loop here.)
+
+// Both the promise and the timeout are asynchronous operations, the function keeps on running while it's busy completing the promise and handling the setTimeout callback. This means that Last line! gets logged first, since this is not an asynchonous operation. This is the last line of funcOne, the promise resolved, and Promise! gets logged. However, since we're invoking funcTwo(), the call stack isn't empty, and the callback of the setTimeout function cannot get added to the callstack yet.
+
+// In funcTwo we're, first awaiting the myPromise promise. With the await keyword, we pause the execution of the function until the promise has resolved (or rejected). Then, we log the awaited value of res (since the promise itself returns a promise). This logs Promise!.
+
+// The next line is the asynchronous setTimeout function, from which the callback is sent to the Web API.
+
+// We get to the last line of funcTwo, which logs Last line! to the console. Now, since funcTwo popped off the call stack, the call stack is empty. The callbacks waiting in the queue (() => console.log("Timeout!") from funcOne, and () => console.log("Timeout!") from funcTwo) get added to the call stack one by one. The first callback logs Timeout!, and gets popped off the stack. Then, the second callback logs Timeout!, and gets popped off the stack. This logs Last line! Promise! Promise! Last line! Timeout! Timeout!
+
 // =================== test 134 =========================
+// sum.js
+// export default function sum(x) {
+// 	return x + x;
+// }
+
+// // index.js
+// import * as sum from "./sum";   // sum.default(4)
+
+// With the asterisk *, we import all exported values from that file, both default and named. If we had the following file:
+
+// // info.js
+// export const name = "Lydia";
+// export const age = 21;
+// export default "I love JavaScript";
+
+// // index.js
+// import * as info from "./info";
+// console.log(info);
+
+// The following would get logged:
+
+// {
+//   default: "I love JavaScript",
+//   name: "Lydia",
+//   age: 21
+// }
+
+// For the sum example, it means that the imported value sum looks like this:
+
+// { default: function sum(x) { return x + x }
+
+// We can invoke this function, by calling sum.default
+
 // =================== test 135 =========================
 // =================== test 136 =========================
 // =================== test 137 =========================
