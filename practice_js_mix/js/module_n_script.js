@@ -1960,8 +1960,30 @@
 // console.log(emojis.flat(1));        // ['🥑', '✨', '✨', ['🍕', '🍕']]
 
 // =================== test 132 =========================
+// class Counter {
+//   constructor() {
+//     this.count = 0;
+//   }
 
+//   increment() {
+//     this.count++;
+//   }
+// }
 
+// const counterOne = new Counter();
+// counterOne.increment();
+// counterOne.increment();
+
+// const counterTwo = counterOne;
+// counterTwo.increment();
+
+// console.log(counterOne.count);      // 3   
+
+// counterOne is an instance of the Counter class. The counter class contains a count property on its constructor, and an increment method. First, we invoked the increment method twice by calling counterOne.increment(). Currently, counterOne.count is 2.
+
+// Then, we create a new variable counterTwo, and set it equal to counterOne. Since objects interact by reference, we're just creating a new reference to the same spot in memory that counterOne points to. Since it has the same spot in memory, any changes made to the object that counterTwo has a reference to, also apply to counterOne. Currently, counterTwo.count is 2.
+
+// We invoke the counterTwo.increment(), which sets the count to 3. Then, we log the count on counterOne, which logs 3.
 // =================== test 133 =========================
 // =================== test 134 =========================
 // =================== test 135 =========================
