@@ -1977,7 +1977,7 @@
 // const counterTwo = counterOne;
 // counterTwo.increment();
 
-// console.log(counterOne.count);      // 3   
+// console.log(counterOne.count);      // 3
 
 // counterOne is an instance of the Counter class. The counter class contains a count property on its constructor, and an increment method. First, we invoked the increment method twice by calling counterOne.increment(). Currently, counterOne.count is 2.
 
@@ -2001,8 +2001,8 @@
 //   console.log("Last line!");
 // }
 
-// funcOne();    // Last line!   Promise!  Timeout! 0  
-// funcTwo();    // Promise!  Last line!   Timeout! 0   
+// funcOne();    // Last line!   Promise!  Timeout! 0
+// funcTwo();    // Promise!  Last line!   Timeout! 0
 
 // First, we invoke funcOne. On the first line of funcOne, we call the myPromise promise, which is an asynchronous operation. While the engine is busy completing the promise, it keeps on running the function funcOne. The next line is the asynchronous setTimeout function, from which the callback is sent to the Web API. (see my article on the event loop here.)
 
@@ -2094,7 +2094,7 @@
 
 // Object.freeze(person);
 
-// // An answer: 
+// // An answer:
 //     person.address.street = "101 Main St";
 
 // console.log(person)   // updated address
@@ -2110,13 +2110,31 @@
 //   console.log(num, value);
 // }
 
-// myFunc();   // 2 4 
+// myFunc();   // 2 4
 // myFunc(3);  // 3 6
-
 
 // First, we invoked myFunc() without passing any arguments. Since we didn't pass arguments, num and value got their default values: num is 2, and value the returned value of the function add. To the add function, we pass num as an argument, which had the value of 2. add returns 4, which is the value of value.
 
 // Then, we invoked myFunc(3) and passed the value 3 as the value for the argument num. We didn't pass an argument for value. Since we didn't pass a value for the value argument, it got the default value: the returned value of the add function. To add, we pass num, which has the value of 3. add returns 6, which is the value of value.
 
 // =================== test 139 =========================
+// class Counter {
+//   #number = 10;
+
+//   increment() {
+//     this.#number++;
+//   }
+
+//   getNum() {
+//     return this.#number;
+//   }
+// }
+
+// const counter = new Counter();
+// counter.increment();
+
+// console.log(counter.#number);   // SyntaxError
+
+// In ES2020, we can add private variables in classes by using the #. We cannot access these variables outside of the class. When we try to log counter.#number, a SyntaxError gets thrown: we cannot acccess it outside the Counter class!
+
 // =================== test 140 =========================
