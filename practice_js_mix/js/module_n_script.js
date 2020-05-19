@@ -2048,7 +2048,7 @@
 
 // We can invoke this function, by calling sum.default
 
-// =================== test 135 =========================
+// =================== test 135 !!! new Proxy =========================
 // const handler = {
 // 	set: () => console.log("Added a new property!"),
 // 	get: () => console.log("Accessed a property!")
@@ -2067,8 +2067,42 @@
 
 // Then, we access a property value on the proxy object, the get property on the handler object got invoked. "Accessed a property!" gets logged.
 
+// =================== test no name =========================
+// console.log(typeof Array);      // function
+// console.log(typeof new Array);    // object
+
 // =================== test 136 =========================
+// const person = { name: "Lydia Hallie" };
+
+// Object.seal(person);
+
+// person.name = "Evan Bacon"
+
+// With Object.seal we can prevent new properies from being added, or existing properties to be removed.
+
+// However, you can still modify the value of existing properties.
+
 // =================== test 137 =========================
+// Whitch mathod can modify the person?
+
+// const person = {
+//   name: "Lydia Hallie",
+//   address: {
+//     street: "100 Main St",
+//   },
+// };
+
+// Object.freeze(person);
+
+// // An answer: 
+//     person.address.street = "101 Main St";
+
+// console.log(person)   // updated address
+
+// The Object.freeze method freezes an object. No properties can be added, modified, or removed.
+
+// However, it only shallowly freezes the object, meaning that only direct properties on the object are frozen. If the property is another object, like address in this case, the properties on that object aren't frozen, and can be modified.
+
 // =================== test 138 =========================
 // =================== test 139 =========================
 // =================== test 140 =========================
