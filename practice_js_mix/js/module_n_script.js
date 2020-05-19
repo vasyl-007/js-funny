@@ -2137,4 +2137,37 @@
 
 // In ES2020, we can add private variables in classes by using the #. We cannot access these variables outside of the class. When we try to log counter.#number, a SyntaxError gets thrown: we cannot acccess it outside the Counter class!
 
+// =================== test 140 !!! function* generator ====================
+// const teams = [
+//   { name: "Team 1", members: ["Paul", "Lisa"] },
+//   { name: "Team 2", members: ["Laura", "Tim"] },
+// ];
+
+// function* getMembers(members) {
+//   for (let i = 0; i < members.length; i++) {
+//     yield members[i];
+//   }
+// }
+
+// function* getTeams(teams) {
+//   for (let i = 0; i < teams.length; i++) {
+//     // ✨ SOMETHING IS MISSING HERE ✨
+//     yield* getMembers(teams[i].members);    // this is an answer
+//   }
+// }
+
+// const obj = getTeams(teams);
+// console.log(obj.next()); // { value: "Paul", done: false }
+// console.log(obj.next()); // { value: "Lisa", done: false }
+
+
+// In order to iterate over the members in each element in the teams array, we need to pass teams[i].members to the getMembers generator function. The generator function returns a generator object. In order to iterate over each element in this generator object, we need to use yield*.
+
+// If we would've written yield, return yield, or return, the entire generator function would've gotten returned the first time we called the next method.
+
+// =================== test 140 =========================
+// =================== test 140 =========================
+// =================== test 140 =========================
+// =================== test 140 =========================
+// =================== test 140 =========================
 // =================== test 140 =========================
