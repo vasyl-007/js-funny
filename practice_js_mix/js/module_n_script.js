@@ -2160,7 +2160,6 @@
 // console.log(obj.next()); // { value: "Paul", done: false }
 // console.log(obj.next()); // { value: "Lisa", done: false }
 
-
 // In order to iterate over the members in each element in the teams array, we need to pass teams[i].members to the getMembers generator function. The generator function returns a generator object. In order to iterate over each element in this generator object, we need to use yield*.
 
 // If we would've written yield, return yield, or return, the entire generator function would've gotten returned the first time we called the next method.
@@ -2213,8 +2212,19 @@
 
 // We create the variable pet which is an instance of the Flamingo class. When we instantiate this instance, the constructor on Flamingo gets called. First, "I'm pink. 🌸" gets logged, after which we call super(). super() calls the constructor of the parent class, Bird. THe constructor in Bird gets called, and logs "I'm a bird. 🦢".
 
-
 // =================== test 143 =========================
+// const emojis = ["🎄", "🎅🏼", "🎁", "⭐"];
+
+// /* 1 */ console.log(emojis.push("🦌"));     // 5 - возвращает номер эл-та по порядку
+
+// /* 2 */ console.log(emojis.splice(0, 2));       // ["🎄", "🎅🏼"] мутирует массив
+
+// /* 3 */ console.log((emojis = [...emojis, "🥂"]));  // TypeError: Assignment to constant variable.
+
+// /* 3 */ console.log((emojis = [...emojis, "🥂"])); // если бы let (вместо const), то было бы ["🎄", "🎅🏼", "🎁", "⭐", "🥂"]
+
+// /* 4 */ console.log((emojis.length = 0));
+
 // =================== test 144 =========================
 
 // =======================================================
