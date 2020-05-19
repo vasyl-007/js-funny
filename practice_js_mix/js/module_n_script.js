@@ -1955,7 +1955,13 @@
 // In the try block, we're logging the awaited value of the myPromise variable: "Woah some cool data". Since no errors were thrown in the try block, the code in the catch block doesn't run. The code in the finally block always runs, "Oh finally!" gets logged.
 
 // =================== test 131 =========================
+// const emojis = ["🥑", ["✨", "✨", ["🍕", "🍕"]]];
+
+// console.log(emojis.flat(1));        // ['🥑', '✨', '✨', ['🍕', '🍕']]
+
 // =================== test 132 =========================
+
+
 // =================== test 133 =========================
 // =================== test 134 =========================
 // =================== test 135 =========================
