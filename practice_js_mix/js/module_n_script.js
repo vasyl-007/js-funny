@@ -2166,24 +2166,24 @@
 // If we would've written yield, return yield, or return, the entire generator function would've gotten returned the first time we called the next method.
 
 // =================== test 141 =========================
-// let hobbies;
-const person = {
-  name: "Lydia Hallie",
-  hobbies: ["coding"],
-};
+// // let hobbies;
+// const person = {
+//   name: "Lydia Hallie",
+//   hobbies: ["coding"],
+// };
 
-function addHobby(hobby, hobbies = person.hobbies) {
-  hobbies.push(hobby);
-  // console.log('hobbies:', hobbies)
-  return hobbies;
-}
+// function addHobby(hobby, hobbies = person.hobbies) {
+//   hobbies.push(hobby);
+//   // console.log('hobbies:', hobbies)
+//   return hobbies;
+// }
 
-addHobby("running", []);
-addHobby("dancing");
-addHobby("baking", person.hobbies);
+// addHobby("running", []);
+// addHobby("dancing");
+// addHobby("baking", person.hobbies);
 
-console.log(person.hobbies);      // ["coding", "dancing", "baking"]
-// console.log(hobbies)
+// console.log(person.hobbies);      // ["coding", "dancing", "baking"]
+// // console.log(hobbies)
 
 // The addHobby function receives two arguments, hobby and hobbies with the default value of the hobbies array on the person object.
 
@@ -2196,6 +2196,24 @@ console.log(person.hobbies);      // ["coding", "dancing", "baking"]
 // After pushing dancing and baking, the value of person.hobbies is ["coding", "dancing", "baking"]
 
 // =================== test 142 =========================
+// class Bird {
+//   constructor() {
+//     console.log("I'm a bird. 🦢");
+//   }
+// }
+
+// class Flamingo extends Bird {
+//   constructor() {
+//     console.log("I'm pink. 🌸");
+//     super();
+//   }
+// }
+
+// const pet = new Flamingo();     // I'm pink. 🌸   I'm a bird. 🦢
+
+// We create the variable pet which is an instance of the Flamingo class. When we instantiate this instance, the constructor on Flamingo gets called. First, "I'm pink. 🌸" gets logged, after which we call super(). super() calls the constructor of the parent class, Bird. THe constructor in Bird gets called, and logs "I'm a bird. 🦢".
+
+
 // =================== test 143 =========================
 // =================== test 144 =========================
 
