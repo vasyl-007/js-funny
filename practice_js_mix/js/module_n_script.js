@@ -2251,3 +2251,47 @@
 //     yield 3;
 // };
 // console.log([...myIterable]); // [1, 2, 3]
+
+// =================== no name =====================
+// const X = "";
+// console.log(typeof (X));    // string
+
+// =================== no name !!! =====================
+// var a = 2;
+// var c = console.log;
+// (function foo() {
+//   var a = 3;
+//   c(a)
+// })();     // 3
+// c(a);     // 2
+// =================== no name =====================
+// var a = "hello";
+// // console.log(a.repeat(5))
+// console.log(a.repeat(5).length)   // 25
+
+// =================== no name =====================
+// var loop = 0;
+// for(let x = 0; x<=2; x++) {
+//   ++loop;
+//   console.log(loop - x)   // 1 1 1
+// }
+
+// =================== no name =====================
+// function findI(v, t) {
+//   const len = v.length;
+//   for (let i = 0; i < len; i++) {
+//     if (v[i] === t) return i;
+//   }
+//   return -1;
+// }
+// console.log(findI([1, 2, 3, 4, 5, 6], 5));    // 4
+
+// =================== no name =====================
+// let x = [2, 3, 2, 5];
+// for (let i = 0; i < x.length - 1; i++) {
+//   x[i] = x[i + 1];
+// }
+// console.log(x);     // [3, 2, 5, 5]
+
+// =================== no name =====================
+// =================== no name =====================
