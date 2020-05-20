@@ -2227,17 +2227,27 @@
 
 // The const keyword simply means we cannot redeclare the value of that variable, it's read-only. However, the value itself isn't immutable. The propeties on the emojis array can be modified, for example by pushing new values, splicing them, or setting the length of the array to 0.
 
-// =================== test 144 =========================
+// =================== test 144 !!!! generator yield Symbol.iterator ==============
 const person = {
   name: "Lydia Hallie",
   age: 21,
+  *[Symbol.iterator]() {
+    yield* Object.values(this);
+  },
 };
 
-person[Symbol.iterator] () { 
-    yield* Object.values(bind(person)) 
+// person[Symbol.iterator] = function* () {
+//   yield Object.values(bind(person));
+// };
 
-console.log([...person]) // ["Lydia Hallie", 21]
+console.log([...person]); // ["Lydia Hallie", 21]
 
-// Objects aren't iterable by default. An iterable is an iterable if the iterator protocol is present. We can add this manually by adding the iterator symbol [Symbol.iterator], which has to return a generator object, for example by making it a generator function *[Symbol.iterator]() {}. This generator function has to yield the Object.values of the person object if we want it to return the array ["Lydia Hallie", 21]: yield* Object.values(this).
-// $FlowFixMe
-// =======================================================
+// Objects aren't iterable by default. An iterable is an iterable if the iterator protocol is present. We can add this manually by adding the iterator symbol [Symbol.iterator], which has to return a generator object, for example by making it a generator function *[Symbol.iterator]() {}. This generator function has to yield the Object.values of the person object if we want it to return the array ["Lydia Hallie", 21]: yield* Object.values(this)
+
+// var myIterable = {};
+// myIterable[Symbol.iterator] = function* () {
+//     yield 1;
+//     yield 2;
+//     yield 3;
+// };
+// console.log([...myIterable]); // [1, 2, 3]
