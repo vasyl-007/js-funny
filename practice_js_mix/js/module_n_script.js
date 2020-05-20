@@ -2294,4 +2294,18 @@
 // console.log(x);     // [3, 2, 5, 5]
 
 // =================== no name =====================
+// function f(a) {
+//   let arr = [];
+//   var i = 0;
+//   while (i < a.length) {
+//     if (a[i] % 2 !== 0) {
+//       arr.push(a[i]);
+//     }
+//     i++;
+//   }
+//   return arr;
+// }
+// const a = [1, 4, 3, 5];
+// console.log(f(a)); // [1,3,5]
+
 // =================== no name =====================
