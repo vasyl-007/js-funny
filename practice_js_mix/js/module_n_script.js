@@ -2383,17 +2383,25 @@
 // console.log(1 < 2 > 3 == true);     // false
 
 // =================== no name !!! proxy =====================
-const numbers = Array(32)
-  .fill(0)
-  .map((v, i) => i);
-const powers = {
-  get(target, prop, receiver) {
-    return 2 ** Reflect.get(target, prop, receiver);
-  },
-};
-const p = new Proxy(numbers, powers);
-console.log(`[${p[0]}, ${p[5]}, ${p[10]}]`);
+// const numbers = Array(32)
+//   .fill(0)
+//   .map((v, i) => i);
+// const powers = {
+//   get(target, prop, receiver) {
+//     return 2 ** Reflect.get(target, prop, receiver);
+//   },
+// };
+// const p = new Proxy(numbers, powers);
+// console.log(`[${p[0]}, ${p[5]}, ${p[10]}]`);
+
 // =================== no name =====================
+// let x = "Tomato";
+// let y = "Kiwifruit";
+// let z = "Blueberry";
+// let string =
+//   z.charAt(8) + y.charAt(6) + x.charAt(2) + x.charAt(2) + z.charAt(8);
+// console.log(string);    // yummy
+
 // =================== no name =====================
 // =================== no name =====================
 // =================== no name =====================
