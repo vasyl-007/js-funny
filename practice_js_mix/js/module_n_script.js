@@ -2372,8 +2372,27 @@
 // console.log(res);       // true
 
 // =================== no name =====================
+// for (var i = 0; i < 7; i += 2) {
+//   if (++i == 5) break;
+//   else continue;
+// }
+// console.log(i++);     // 9
+
 // =================== no name =====================
-// =================== no name =====================
+// console.log(1 < 2 > 3 == false);    // true
+// console.log(1 < 2 > 3 == true);     // false
+
+// =================== no name !!! proxy =====================
+const numbers = Array(32)
+  .fill(0)
+  .map((v, i) => i);
+const powers = {
+  get(target, prop, receiver) {
+    return 2 ** Reflect.get(target, prop, receiver);
+  },
+};
+const p = new Proxy(numbers, powers);
+console.log(`[${p[0]}, ${p[5]}, ${p[10]}]`);
 // =================== no name =====================
 // =================== no name =====================
 // =================== no name =====================
