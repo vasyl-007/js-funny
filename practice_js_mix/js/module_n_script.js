@@ -2403,7 +2403,25 @@
 // console.log(string);    // yummy
 
 // =================== no name =====================
+// var sum = 0;
+// for (var i = 1; i <= 10; i++) {
+//   if (i % 5 === 0 && i % 3 === 0) {
+//     sum += i;
+//   }
+//   continue;
+// }
+// console.log(sum);     // 0
+
 // =================== no name =====================
+// let stories = [];
+// const runStory = () => {
+//   stories.push(function () {
+//     let f = "fun";
+//   });
+// };
+// runStory();
+// console.log(stories)    // function
+
 // =================== no name =====================
 // =================== no name =====================
 // =================== no name =====================
