@@ -2350,8 +2350,27 @@
 // console.log(y);     // 9
 
 // =================== no name =====================
+// var x = null;
+// var y = 80;
+// var z = x + y;
+// console.log(x / z);    // 0;
+// console.log(null / 5); // 0
+// console.log(null - 5); // -5
 
 // =================== no name =====================
+// function XOR(x, y) {
+//   if (x == y) {
+//     return false;
+//   } else {
+//     return true;
+//   }
+// }
+// var a = true;
+// var b = false;
+// var c = false;
+// var res = XOR(XOR(a, b), c);
+// console.log(res);       // true
+
 // =================== no name =====================
 // =================== no name =====================
 // =================== no name =====================
