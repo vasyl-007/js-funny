@@ -2423,7 +2423,17 @@
 // console.log(stories)    // function
 
 // =================== no name =====================
+// console.log([] + false + true);       // falsetrue
+// console.log([] + false + true - null);   // NaN
+
 // =================== no name =====================
+// var map = Array.prototype.map;
+// var arr = map.call("1456", (el) => {
+//   // console.log(el)
+//   return el % 2 === 0;
+// });
+// console.log(arr[0]);    // false
+
 // =================== no name =====================
 // =================== no name =====================
 // =================== no name =====================
