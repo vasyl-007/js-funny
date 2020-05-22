@@ -2486,7 +2486,19 @@
 // myFunc();     // undefined
 // var x = 2;
 
+// =================== no name !!! =====================
+// var ls = [];
+// function f(r) {
+//   return r === 0 ? [] : [(ls[ls.length] = ls.length + 1), ...f(r - 1)];
+// }
+// console.log(f(5));      // [1,2,3,4,5]
+
 // =================== no name =====================
+// let a = typeof constructor == "object";     // false
+// let b = typeof constructor == "function";   // true
+// let c = typeof constructor == "undefined";  // false  
+// console.log(a, b, c);
+
 // =================== no name =====================
-// =================== no name =====================
+
 // =================== no name =====================
