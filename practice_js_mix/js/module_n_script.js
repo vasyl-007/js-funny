@@ -2464,9 +2464,21 @@
 // console.log(num2)   // 0.99
 
 // =================== no name =====================
-
+// const myArray = ["zero", 3, 4, "five", 1, 2, 6, "nine", 8];
+// console.log(myArray["3"]);    // five
 
 // =================== no name =====================
+// var x = "Programming";
+// var z =
+//   x.substr(0, 6) +
+//   x.charAt(6).toUpperCase() +
+//   x.charAt(7).toUpperCase() +
+//   x.substr(8);
+// console.log(z);     // PrograMMing
+
+// console.log(x.substr(0, 6));    // Progra
+// console.log(x.slice(0, 6));     // Progra
+
 // =================== no name =====================
 // =================== no name =====================
 // =================== no name =====================
